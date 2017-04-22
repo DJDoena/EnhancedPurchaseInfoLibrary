@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="EnhancedPurchaseInfo" type="EnhancedPurchaseInfo"/>
+  <xs:element name="EnhancedPurchaseInfoList" type ="EnhancedPurchaseInfoList" />
+  <xs:complexType name="EnhancedPurchaseInfoList">
+    <xs:sequence>
+      <xs:element name="Profiles" type="Profiles" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profiles">
+    <xs:sequence>
+      <xs:element name="Profile" type="Profile" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element name="EnhancedPurchaseInfo" type="EnhancedPurchaseInfo" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:string" use="required" />
+    <xs:attribute name="Title" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="EnhancedPurchaseInfo">
+    <xs:sequence>
+      <xs:element name="OriginalPrice" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ShippingCost" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CreditCardCharge" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CreditCardFees" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Discount" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CustomsFees" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CouponType" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CouponCode" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AdditionalPrice1" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AdditionalPrice2" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OrderDate" type="Date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ShippingDate" type="Date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DeliveryDate" type="Date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AdditionalDate1" type="Date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AdditionalDate2" type="Date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="InvelosData" type="InvelosData"  minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Price">
+    <xs:simpleContent>
+      <xs:extension base="xs:float">
+        <xs:attribute name="DenominationType" type="xs:string" use="required"/>
+        <xs:attribute name="DenominationDesc" type="xs:string" use="required"/>
+        <xs:attribute name="FormattedValue" type="xs:string" use="required"/>
+        <xs:attribute name="DisplayName" type="xs:string" use="optional"/>
+        <xs:attribute name="Base64DisplayName" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Date">
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="DisplayName" type="xs:string" use="optional"/>
+        <xs:attribute name="Base64DisplayName" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="DisplayName" type="xs:string" use="optional"/>
+        <xs:attribute name="Base64DisplayName" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="InvelosData">
+    <xs:sequence>
+      <xs:element name="PurchasePrice" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SRP" type="Price" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PurchaseDate" type="xs:date" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
