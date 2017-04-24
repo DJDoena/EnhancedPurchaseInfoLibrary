@@ -21,6 +21,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
                 {
                     s_XmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfoList));
                 }
+
                 return (s_XmlSerializer);
             }
         }
@@ -29,20 +30,21 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedPurchaseInfoList instance;
+                EnhancedPurchaseInfoList instance = (EnhancedPurchaseInfoList)(XmlSerializer.Deserialize(fs));
 
-                instance = (EnhancedPurchaseInfoList)(XmlSerializer.Deserialize(fs));
                 return (instance);
             }
         }
 
-        public static void Serialize(EnhancedPurchaseInfoList instance, String fileName)
+        public static void Serialize(EnhancedPurchaseInfoList instance
+            , String fileName)
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
                 using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+
                     XmlSerializer.Serialize(xtw, instance);
                 }
             }
@@ -67,6 +69,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
                 {
                     s_XmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfo));
                 }
+
                 return (s_XmlSerializer);
             }
         }
@@ -75,20 +78,21 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedPurchaseInfo instance;
+                EnhancedPurchaseInfo instance = (EnhancedPurchaseInfo)(XmlSerializer.Deserialize(fs));
 
-                instance = (EnhancedPurchaseInfo)(XmlSerializer.Deserialize(fs));
                 return (instance);
             }
         }
 
-        public static void Serialize(EnhancedPurchaseInfo instance, String fileName)
+        public static void Serialize(EnhancedPurchaseInfo instance
+            , String fileName)
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
                 using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+
                     XmlSerializer.Serialize(xtw, instance);
                 }
             }
