@@ -288,6 +288,69 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo.Resources {
         /// <summary>
         ///   Looks up a localized string similar to False.
         /// </summary>
+        internal static string CURRENCY_31 {
+            get {
+                return ResourceManager.GetString("CURRENCY_31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to False.
+        /// </summary>
+        internal static string CURRENCY_32 {
+            get {
+                return ResourceManager.GetString("CURRENCY_32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        internal static string CURRENCY_33 {
+            get {
+                return ResourceManager.GetString("CURRENCY_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        internal static string CURRENCY_34 {
+            get {
+                return ResourceManager.GetString("CURRENCY_34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        internal static string CURRENCY_35 {
+            get {
+                return ResourceManager.GetString("CURRENCY_35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        internal static string CURRENCY_36 {
+            get {
+                return ResourceManager.GetString("CURRENCY_36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        internal static string CURRENCY_37 {
+            get {
+                return ResourceManager.GetString("CURRENCY_37", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to False.
+        /// </summary>
         internal static string CURRENCY_4 {
             get {
                 return ResourceManager.GetString("CURRENCY_4", resourceCulture);
@@ -336,69 +399,6 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo.Resources {
         internal static string CURRENCY_9 {
             get {
                 return ResourceManager.GetString("CURRENCY_9", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to True.
-        /// </summary>
-        internal static string CURRENCY_CZK {
-            get {
-                return ResourceManager.GetString("CURRENCY_CZK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to True.
-        /// </summary>
-        internal static string CURRENCY_EEK {
-            get {
-                return ResourceManager.GetString("CURRENCY_EEK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to False.
-        /// </summary>
-        internal static string CURRENCY_HUF {
-            get {
-                return ResourceManager.GetString("CURRENCY_HUF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to False.
-        /// </summary>
-        internal static string CURRENCY_PLN {
-            get {
-                return ResourceManager.GetString("CURRENCY_PLN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to True.
-        /// </summary>
-        internal static string CURRENCY_RON {
-            get {
-                return ResourceManager.GetString("CURRENCY_RON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to True.
-        /// </summary>
-        internal static string CURRENCY_SKK {
-            get {
-                return ResourceManager.GetString("CURRENCY_SKK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to True.
-        /// </summary>
-        internal static string CURRENCY_VND {
-            get {
-                return ResourceManager.GetString("CURRENCY_VND", resourceCulture);
             }
         }
     }

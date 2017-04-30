@@ -192,6 +192,27 @@
   <data name="CURRENCY_30" xml:space="preserve">
     <value>Bitcoin</value>
   </data>
+  <data name="CURRENCY_31" xml:space="preserve">
+    <value>Hungary (Forint)</value>
+  </data>
+  <data name="CURRENCY_32" xml:space="preserve">
+    <value>Poland (Zloty)</value>
+  </data>
+  <data name="CURRENCY_33" xml:space="preserve">
+    <value>Czech Republic (Koruna)</value>
+  </data>
+  <data name="CURRENCY_34" xml:space="preserve">
+    <value>Vietnam (Dong)</value>
+  </data>
+  <data name="CURRENCY_35" xml:space="preserve">
+    <value>Estonia (Kroon)</value>
+  </data>
+  <data name="CURRENCY_36" xml:space="preserve">
+    <value>Romania (New leu)</value>
+  </data>
+  <data name="CURRENCY_37" xml:space="preserve">
+    <value>Slovakia (Koruna)</value>
+  </data>
   <data name="CURRENCY_4" xml:space="preserve">
     <value>Canada (Dollar)</value>
   </data>
@@ -209,26 +230,5 @@
   </data>
   <data name="CURRENCY_9" xml:space="preserve">
     <value>Great Britain (Pound)</value>
-  </data>
-  <data name="CURRENCY_CZK" xml:space="preserve">
-    <value>Czech Republic (Koruna)</value>
-  </data>
-  <data name="CURRENCY_EEK" xml:space="preserve">
-    <value>Estonia (Kroon)</value>
-  </data>
-  <data name="CURRENCY_HUF" xml:space="preserve">
-    <value>Hungary (Forint)</value>
-  </data>
-  <data name="CURRENCY_PLN" xml:space="preserve">
-    <value>Poland (Zloty)</value>
-  </data>
-  <data name="CURRENCY_RON" xml:space="preserve">
-    <value>Romania (New leu)</value>
-  </data>
-  <data name="CURRENCY_SKK" xml:space="preserve">
-    <value>Slovakia (Koruna)</value>
-  </data>
-  <data name="CURRENCY_VND" xml:space="preserve">
-    <value>Vietnam (Dong)</value>
   </data>
 </root>

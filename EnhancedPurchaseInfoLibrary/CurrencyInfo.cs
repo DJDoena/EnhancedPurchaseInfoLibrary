@@ -25,7 +25,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public const UInt16 MinID = 0;
 
-        public const UInt16 MaxID = 30;
+        public const UInt16 MaxID = 37;
 
         public readonly Boolean IsEmpty;
 
@@ -102,7 +102,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public String GetFormattedValue(Decimal decimalValue)
         {
-            const Int32 CURRENCY_XBT = 30; //from PluginInterface.4.cs
+            const Int32 CURRENCY_XBT = 30; //from PluginInterface.5.cs
 
             String stringValue;
             if (Id == CURRENCY_XBT)
