@@ -13,15 +13,15 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public readonly UInt16 Digits;
 
-        public readonly String Name;
+        public readonly string Name;
 
         public readonly Boolean Space;
 
         public readonly Boolean Suffix;
 
-        public readonly String Symbol;
+        public readonly string Symbol;
 
-        public readonly String Type;
+        public readonly string Type;
 
         public const UInt16 MinID = 0;
 
@@ -46,15 +46,15 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
             Digits = 0;
 
-            Name = String.Empty;
+            Name = string.Empty;
 
             Space = false;
 
             Suffix = false;
 
-            Symbol = String.Empty;
+            Symbol = string.Empty;
 
-            Type = String.Empty;
+            Type = string.Empty;
 
             IsEmpty = true;
 
@@ -63,7 +63,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public CurrencyInfo(Int32 id)
         {
-            const String Prefix = "CURRENCY_";
+            const string Prefix = "CURRENCY_";
 
             if ((id < MinID) || (id > MaxID))
             {
@@ -72,7 +72,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
             Id = id;
 
-            String name = Prefix + id;
+            string name = Prefix + id;
 
             Digits = UInt16.Parse(CurrencyDigits.ResourceManager.GetString(name));
 
@@ -91,20 +91,20 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
             FormatCulture = DefaultFormatCulture;
         }
 
-        public String GetFormattedValue(Int64 longValue)
+        public string GetFormattedValue(Int64 longValue)
         {
             Decimal decimalValue = longValue / Constants.DigitDivider;
 
-            String stringValue = GetFormattedValue(decimalValue);
+            string stringValue = GetFormattedValue(decimalValue);
 
             return (stringValue);
         }
 
-        public String GetFormattedValue(Decimal decimalValue)
+        public string GetFormattedValue(Decimal decimalValue)
         {
             const Int32 CURRENCY_XBT = 30; //from PluginInterface.5.cs
 
-            String stringValue;
+            string stringValue;
             if (Id == CURRENCY_XBT)
             {
                 stringValue = GetFormattedBitcoin(decimalValue);
@@ -117,19 +117,19 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
             return (stringValue);
         }
 
-        public String GetFormattedPlainValue(Int64 longValue)
+        public string GetFormattedPlainValue(Int64 longValue)
         {
             Decimal decimalValue = ((Decimal)longValue) / Constants.DigitDivider;
 
-            String stringValue = GetFormattedPlainValue(decimalValue);
+            string stringValue = GetFormattedPlainValue(decimalValue);
 
             return (stringValue);
         }
 
-        public String GetFormattedPlainValue(Decimal decimalValue)
+        public string GetFormattedPlainValue(Decimal decimalValue)
             => (Math.Round(decimalValue, Digits).ToString("F" + Digits, FormatCulture));
 
-        private String GetFormattedValueInternal(Decimal decimalValue)
+        private string GetFormattedValueInternal(Decimal decimalValue)
         {
             StringBuilder result = new StringBuilder();
 
@@ -143,7 +143,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
                 }
             }
 
-            String number = GetFormattedPlainValue(decimalValue);
+            string number = GetFormattedPlainValue(decimalValue);
 
             result.Append(number);
 
@@ -160,16 +160,16 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
             return (result.ToString());
         }
 
-        private String GetFormattedBitcoin(Decimal decimalValue)
+        private string GetFormattedBitcoin(Decimal decimalValue)
         {
             decimalValue = decimalValue / 100000000m;
 
-            String stringValue = GetFormattedValueInternal(decimalValue);
+            string stringValue = GetFormattedValueInternal(decimalValue);
 
             return (stringValue);
         }
 
-        public String GetFormattedValue(Double doubleValue)
+        public string GetFormattedValue(Double doubleValue)
             => (GetFormattedValue(Convert.ToDecimal(doubleValue)));
 
         public override Int32 GetHashCode()

@@ -6,51 +6,51 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
     {
         #region Prices
 
-        public const String CurrencySuffix = "Currency";
+        public const string CurrencySuffix = "Currency";
 
-        public const String OriginalPrice = "OriginalPrice";
+        public const string OriginalPrice = "OriginalPrice";
 
-        public const String ShippingCost = "ShippingCost";
+        public const string ShippingCost = "ShippingCost";
 
-        public const String CreditCardCharge = "CreditCardCharge";
+        public const string CreditCardCharge = "CreditCardCharge";
 
-        public const String CreditCardFees = "CreditCardFees";
+        public const string CreditCardFees = "CreditCardFees";
 
-        public const String Discount = "Discount";
+        public const string Discount = "Discount";
 
-        public const String CustomsFees = "CustomsFees";
+        public const string CustomsFees = "CustomsFees";
 
-        public const String CouponType = "CouponType";
+        public const string CouponType = "CouponType";
 
-        public const String CouponCode = "CouponCode";
+        public const string CouponCode = "CouponCode";
 
-        public const String AdditionalPrice1 = "AdditionalPrice1";
+        public const string AdditionalPrice1 = "AdditionalPrice1";
 
-        public const String AdditionalPrice2 = "AdditionalPrice2";
+        public const string AdditionalPrice2 = "AdditionalPrice2";
 
         #endregion
 
         #region Dates
 
-        public const String OrderDate = "OrderDate";
+        public const string OrderDate = "OrderDate";
 
-        public const String ShippingDate = "ShippingDate";
+        public const string ShippingDate = "ShippingDate";
 
-        public const String DeliveryDate = "DeliveryDate";
+        public const string DeliveryDate = "DeliveryDate";
 
-        public const String AdditionalDate1 = "AdditionalDate1";
+        public const string AdditionalDate1 = "AdditionalDate1";
 
-        public const String AdditionalDate2 = "AdditionalDate2";
+        public const string AdditionalDate2 = "AdditionalDate2";
 
         #endregion
 
-        public const String FieldDomain = "EnhancedPurchaseInfo";
+        public const string FieldDomain = "EnhancedPurchaseInfo";
 
-        public const String ReadKey = "EnhancedPurchaseInfo";
+        public const string ReadKey = "EnhancedPurchaseInfo";
 
-        public const String LabelSuffix = "Label";
+        public const string LabelSuffix = "Label";
 
-        public const String HtmlPrefix = "EPI";
+        public const string HtmlPrefix = "EPI";
 
         public const Decimal DigitDivider = 10000m;
     }

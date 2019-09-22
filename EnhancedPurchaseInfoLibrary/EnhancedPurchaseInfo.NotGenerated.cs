@@ -1,56 +1,58 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-// xsd.exe /c /l:cs /n:DoenaSoft.DVDProfiler.EnhancedPurchaseInfo EnhancedPurchaseInfo.xsd
+// xsd.exe /c /l:cs /f /n:DoenaSoft.DVDProfiler.EnhancedPurchaseInfo EnhancedPurchaseInfo.xsd
 
 namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 {
     public sealed partial class EnhancedPurchaseInfoList
     {
-        private static XmlSerializer s_XmlSerializer;
+        private static XmlSerializer _xmlSerializer;
 
         [XmlIgnore]
         public static XmlSerializer XmlSerializer
         {
             get
             {
-                if (s_XmlSerializer == null)
+                if (_xmlSerializer == null)
                 {
-                    s_XmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfoList));
+                    _xmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfoList));
                 }
 
-                return (s_XmlSerializer);
+                return _xmlSerializer;
             }
         }
 
-        public static EnhancedPurchaseInfoList Deserialize(String fileName)
+        public static EnhancedPurchaseInfoList Deserialize(string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedPurchaseInfoList instance = (EnhancedPurchaseInfoList)(XmlSerializer.Deserialize(fs));
+                var instance = (EnhancedPurchaseInfoList)(XmlSerializer.Deserialize(fs));
 
-                return (instance);
+                return instance;
             }
         }
 
-        public static void Serialize(EnhancedPurchaseInfoList instance
-            , String fileName)
+        public static void Serialize(EnhancedPurchaseInfoList instance, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
+                using (var xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+                    xtw.Namespaces = false;
 
-                    XmlSerializer.Serialize(xtw, instance);
+                    var ns = new XmlSerializerNamespaces();
+                    ns.Add(string.Empty, string.Empty);
+
+                    XmlSerializer.Serialize(xtw, instance, ns);
                 }
             }
         }
 
-        public void Serialize(String fileName)
+        public void Serialize(string fileName)
         {
             Serialize(this, fileName);
         }
@@ -58,47 +60,50 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
     public sealed partial class EnhancedPurchaseInfo
     {
-        private static XmlSerializer s_XmlSerializer;
+        private static XmlSerializer _xmlSerializer;
 
         [XmlIgnore]
         public static XmlSerializer XmlSerializer
         {
             get
             {
-                if (s_XmlSerializer == null)
+                if (_xmlSerializer == null)
                 {
-                    s_XmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfo));
+                    _xmlSerializer = new XmlSerializer(typeof(EnhancedPurchaseInfo));
                 }
 
-                return (s_XmlSerializer);
+                return _xmlSerializer;
             }
         }
 
-        public static EnhancedPurchaseInfo Deserialize(String fileName)
+        public static EnhancedPurchaseInfo Deserialize(string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedPurchaseInfo instance = (EnhancedPurchaseInfo)(XmlSerializer.Deserialize(fs));
+                var instance = (EnhancedPurchaseInfo)(XmlSerializer.Deserialize(fs));
 
-                return (instance);
+                return instance;
             }
         }
 
-        public static void Serialize(EnhancedPurchaseInfo instance
-            , String fileName)
+        public static void Serialize(EnhancedPurchaseInfo instance, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
+                using (var xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+                    xtw.Namespaces = false;
 
-                    XmlSerializer.Serialize(xtw, instance);
+                    var ns = new XmlSerializerNamespaces();
+                    ns.Add(string.Empty, string.Empty);
+
+                    XmlSerializer.Serialize(xtw, instance, ns);
                 }
             }
         }
 
-        public void Serialize(String fileName)
+        public void Serialize(string fileName)
         {
             Serialize(this, fileName);
         }
