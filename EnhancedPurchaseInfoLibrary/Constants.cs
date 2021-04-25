@@ -52,6 +52,6 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public const string HtmlPrefix = "EPI";
 
-        public const Decimal DigitDivider = 10000m;
+        public const decimal DigitDivider = 10000m;
     }
 }

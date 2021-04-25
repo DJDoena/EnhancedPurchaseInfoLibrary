@@ -79,6 +79,7 @@
     <Compile Include="ClassGuid.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="CurrencyInfo.cs" />
+    <Compile Include="CurrencyInfoHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnhancedPurchaseInfo.cs">
       <DependentUpon>EnhancedPurchaseInfo.xsd</DependentUpon>
