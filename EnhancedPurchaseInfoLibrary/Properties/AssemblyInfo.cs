@@ -10,7 +10,7 @@ using System.Reflection;
 [assembly: AssemblyCulture("")]
 
 
-[assembly: AssemblyVersion("1.1.1.2")]
-[assembly: AssemblyFileVersion("1.1.1.2")]
+[assembly: AssemblyVersion("1.1.1.3")]
+[assembly: AssemblyFileVersion("1.1.1.3")]
 
 [assembly: AssemblyDelaySign(false)]

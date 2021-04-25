@@ -9,34 +9,36 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
     [DebuggerDisplay("DenominationType={Type} DenominationDesc={Name}")]
     public sealed class CurrencyInfo : IComparable<CurrencyInfo>, IEquatable<CurrencyInfo>
     {
-        public readonly int Id;
-
-        public readonly ushort Digits;
-
-        public readonly string Name;
-
-        public readonly bool Space;
-
-        public readonly bool Suffix;
-
-        public readonly string Symbol;
-
-        public readonly string Type;
-
         public const ushort MinID = 0;
 
         public const ushort MaxID = 37;
 
-        public readonly bool IsEmpty;
+        public int Id { get; }
 
-        public static readonly CurrencyInfo Empty = new CurrencyInfo();
+        public ushort Digits { get; }
 
-        public static CultureInfo DefaultFormatCulture { get; set; }
+        public string Name { get; }
+
+        public bool Space { get; }
+
+        public bool Suffix { get; }
+
+        public string Symbol { get; }
+
+        public string Type { get; }
+
+        public bool IsEmpty { get; }
+
+        public static CurrencyInfo Empty { get; }
+
+        public static CultureInfo DefaultFormatCulture { get; }
 
         public CultureInfo FormatCulture { get; set; }
 
         static CurrencyInfo()
         {
+            Empty = new CurrencyInfo();
+
             DefaultFormatCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
         }
 
@@ -72,7 +74,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
             Id = id;
 
-            string name = Prefix + id;
+            var name = Prefix + id;
 
             Digits = ushort.Parse(CurrencyDigits.ResourceManager.GetString(name));
 
@@ -115,7 +117,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             decimal decimalValue = longValue / Constants.DigitDivider;
 
-            string stringValue = GetFormattedPlainValue(decimalValue);
+            var stringValue = GetFormattedPlainValue(decimalValue);
 
             return stringValue;
         }
