@@ -31,7 +31,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public static CurrencyInfo Empty { get; }
 
-        public static CultureInfo DefaultFormatCulture { get; }
+        public static CultureInfo DefaultFormatCulture { get; set; }
 
         public CultureInfo FormatCulture { get; set; }
 
@@ -44,23 +44,23 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         private CurrencyInfo()
         {
-            Id = -1;
+            this.Id = -1;
 
-            Digits = 0;
+            this.Digits = 0;
 
-            Name = string.Empty;
+            this.Name = string.Empty;
 
-            Space = false;
+            this.Space = false;
 
-            Suffix = false;
+            this.Suffix = false;
 
-            Symbol = string.Empty;
+            this.Symbol = string.Empty;
 
-            Type = string.Empty;
+            this.Type = string.Empty;
 
-            IsEmpty = true;
+            this.IsEmpty = true;
 
-            FormatCulture = DefaultFormatCulture;
+            this.FormatCulture = DefaultFormatCulture;
         }
 
         public CurrencyInfo(int id)
@@ -72,32 +72,32 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
                 throw (new ArgumentException("Invalid ID!", "id"));
             }
 
-            Id = id;
+            this.Id = id;
 
             var name = Prefix + id;
 
-            Digits = ushort.Parse(CurrencyDigits.ResourceManager.GetString(name));
+            this.Digits = ushort.Parse(CurrencyDigits.ResourceManager.GetString(name));
 
-            Name = CurrencyName.ResourceManager.GetString(name);
+            this.Name = CurrencyName.ResourceManager.GetString(name);
 
-            Space = bool.Parse(CurrencySpace.ResourceManager.GetString(name));
+            this.Space = bool.Parse(CurrencySpace.ResourceManager.GetString(name));
 
-            Suffix = bool.Parse(CurrencySuffix.ResourceManager.GetString(name));
+            this.Suffix = bool.Parse(CurrencySuffix.ResourceManager.GetString(name));
 
-            Symbol = CurrencySymbol.ResourceManager.GetString(name);
+            this.Symbol = CurrencySymbol.ResourceManager.GetString(name);
 
-            Type = CurrencyType.ResourceManager.GetString(name);
+            this.Type = CurrencyType.ResourceManager.GetString(name);
 
-            IsEmpty = false;
+            this.IsEmpty = false;
 
-            FormatCulture = DefaultFormatCulture;
+            this.FormatCulture = DefaultFormatCulture;
         }
 
         public string GetFormattedValue(long longValue)
         {
             var decimalValue = longValue / Constants.DigitDivider;
 
-            var stringValue = GetFormattedValue(decimalValue);
+            var stringValue = this.GetFormattedValue(decimalValue);
 
             return stringValue;
         }
@@ -106,9 +106,9 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             const int CURRENCY_XBT = 30; //from PluginInterface.5.cs
 
-            var stringValue = Id == CURRENCY_XBT
-                ? GetFormattedBitcoin(decimalValue)
-                : GetFormattedValueInternal(decimalValue);
+            var stringValue = this.Id == CURRENCY_XBT
+                ? this.GetFormattedBitcoin(decimalValue)
+                : this.GetFormattedValueInternal(decimalValue);
 
             return stringValue;
         }
@@ -117,39 +117,39 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             decimal decimalValue = longValue / Constants.DigitDivider;
 
-            var stringValue = GetFormattedPlainValue(decimalValue);
+            var stringValue = this.GetFormattedPlainValue(decimalValue);
 
             return stringValue;
         }
 
-        public string GetFormattedPlainValue(decimal decimalValue) => Math.Round(decimalValue, Digits).ToString("F" + Digits, FormatCulture);
+        public string GetFormattedPlainValue(decimal decimalValue) => Math.Round(decimalValue, this.Digits).ToString("F" + this.Digits, this.FormatCulture);
 
         private string GetFormattedValueInternal(decimal decimalValue)
         {
             var result = new StringBuilder();
 
-            if (Suffix == false)
+            if (this.Suffix == false)
             {
-                result.Append(Symbol);
+                result.Append(this.Symbol);
 
-                if (Space)
+                if (this.Space)
                 {
                     result.Append(" ");
                 }
             }
 
-            var number = GetFormattedPlainValue(decimalValue);
+            var number = this.GetFormattedPlainValue(decimalValue);
 
             result.Append(number);
 
-            if (Suffix)
+            if (this.Suffix)
             {
-                if (Space)
+                if (this.Space)
                 {
                     result.Append(" ");
                 }
 
-                result.Append(Symbol);
+                result.Append(this.Symbol);
             }
 
             return result.ToString();
@@ -159,26 +159,26 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
         {
             decimalValue /= 100_000_000m;
 
-            var stringValue = GetFormattedValueInternal(decimalValue);
+            var stringValue = this.GetFormattedValueInternal(decimalValue);
 
             return stringValue;
         }
 
-        public string GetFormattedValue(double doubleValue) => GetFormattedValue(Convert.ToDecimal(doubleValue));
+        public string GetFormattedValue(double doubleValue) => this.GetFormattedValue(Convert.ToDecimal(doubleValue));
 
-        public override int GetHashCode() => Id.GetHashCode();
+        public override int GetHashCode() => this.Id.GetHashCode();
 
-        public override bool Equals(object obj) => Equals(obj as CurrencyInfo);
+        public override bool Equals(object obj) => this.Equals(obj as CurrencyInfo);
 
         #region IComparable<CurrencyInfo> Members
 
-        public int CompareTo(CurrencyInfo other) => other != null ? Name.CompareTo(other.Name) : -1;
+        public int CompareTo(CurrencyInfo other) => other != null ? this.Name.CompareTo(other.Name) : -1;
 
         #endregion
 
         #region IEquatable<CurrencyInfo> Members
 
-        public bool Equals(CurrencyInfo other) => other != null ? Id == other.Id : false;
+        public bool Equals(CurrencyInfo other) => other != null ? this.Id == other.Id : false;
 
         #endregion
     }
