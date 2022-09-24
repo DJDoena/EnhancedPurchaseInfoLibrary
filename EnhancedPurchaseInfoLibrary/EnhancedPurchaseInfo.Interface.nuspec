@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>DoenaSoft.EnhancedPurchaseInfo.Interface</id>
+    <version>1.1.2</version>
+    <title>DoenaSoft.EnhancedPurchaseInfo.Interface</title>
+    <authors>DJ Doena</authors>
+    <icon>images\djdsoft.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/DJDoena/EnhancedPurchaseInfoLibrary</projectUrl>
+    <description>Gives an interface layer for the COM plugin EnhancedPurchaseInfo for DVD Profiler</description>
+    <copyright>2015 - 2022</copyright>
+    <tags>dvd-profiler, dvdprofiler, invelos, EnhancedPurchaseInfo</tags>
+  </metadata>
+  <files>
+    <file src="bin\x64\Release\DoenaSoft.EnhancedPurchaseInfo.Interface.dll" target="build\x64\DoenaSoft.EnhancedPurchaseInfo.Interface.dll" />
+    <file src="bin\x64\Release\DoenaSoft.EnhancedPurchaseInfo.Interface.xml" target="build\x64\DoenaSoft.EnhancedPurchaseInfo.Interface.xml" />
+    <file src="bin\x64\Release\EnhancedPurchaseInfo.xsd" target="build\x64\EnhancedPurchaseInfo.xsd" />
+
+    <file src="bin\x86\Release\DoenaSoft.EnhancedPurchaseInfo.Interface.dll" target="build\x86\DoenaSoft.EnhancedPurchaseInfo.Interface.dll" />
+    <file src="bin\x86\Release\DoenaSoft.EnhancedPurchaseInfo.Interface.xml" target="build\x86\DoenaSoft.EnhancedPurchaseInfo.Interface.xml" />
+    <file src="bin\x86\Release\EnhancedPurchaseInfo.xsd" target="build\x86\EnhancedPurchaseInfo.xsd" />
+
+    <file src="DoenaSoft.EnhancedPurchaseInfo.Interface.props" target="build\net452" />
+
+    <file src="djdsoft.png" target="images\" />
+</files>
+</package>
