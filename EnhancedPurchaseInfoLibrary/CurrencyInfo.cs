@@ -115,7 +115,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 
         public string GetFormattedPlainValue(long longValue)
         {
-            decimal decimalValue = longValue / Constants.DigitDivider;
+            var decimalValue = longValue / Constants.DigitDivider;
 
             var stringValue = this.GetFormattedPlainValue(decimalValue);
 

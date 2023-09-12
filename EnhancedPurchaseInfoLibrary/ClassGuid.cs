@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
+﻿namespace DoenaSoft.DVDProfiler.EnhancedPurchaseInfo
 {
     public static class ClassGuid
     {
