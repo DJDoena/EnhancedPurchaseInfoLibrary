@@ -20,8 +20,8 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>dvd-profiler, dvdprofiler, invelos, EnhancedPurchaseInfo</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>2.0.1</Version>
-		<FileVersion>2.0.1</FileVersion>
+		<Version>2.0.2</Version>
+		<FileVersion>2.0.2</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -29,39 +29,51 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="EnhancedPurchaseInfo.xsd" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="EnhancedPurchaseInfo.xsd" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Update="EnhancedPurchaseInfo.NotGenerated.cs">
 			<DependentUpon>EnhancedPurchaseInfo.xsd</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencyDigits.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencyDigits.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencyDigits.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencyName.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencyName.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencyName.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencySpace.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencySpace.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencySpace.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencySuffix.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencySuffix.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencySuffix.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencySymbol.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencySymbol.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencySymbol.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\CurrencyType.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>CurrencyType.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CurrencyType.resx</DependentUpon>
 		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="EnhancedPurchaseInfo.xsd" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -69,33 +81,6 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Update="Resources\CurrencyDigits.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>CurrencyDigits.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-		<EmbeddedResource Update="Resources\CurrencyName.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>CurrencyName.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\CurrencySpace.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>CurrencySpace.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\CurrencySuffix.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>CurrencySuffix.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\CurrencySymbol.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>CurrencySymbol.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\CurrencyType.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>CurrencyType.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-	</ItemGroup>
+	</ItemGroup>	
 
 </Project>
